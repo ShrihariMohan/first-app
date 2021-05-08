@@ -10,7 +10,7 @@ const Secondcomponent = () => {
 
 function Thirdcomponent () {
   return (<div> 
-    <h1>
+    <h1> 
       Hello parent = div 
     </h1>
   </div>)
@@ -19,4 +19,39 @@ function Thirdcomponent () {
 const Fourthcomponent = () => {
   return React.createElement('div' , {} , React.createElement('h1' , {} , 'Hello fourth component'))
 }
-reactDom.render(<Fourthcomponent/>,document.getElementById('root'));
+
+const Fifth = () => {
+  return (
+    <React.Fragment>
+      <div> First Block</div>
+      <div> Second Block </div>
+    </React.Fragment>
+  )
+}
+
+const Sixth = () => {
+  return (
+    <>
+      <div> First Block</div>
+      <div> Second Block </div>
+    </>
+  )
+}
+
+// const ThisWillNotWork = () => {
+//   return (
+//     <div> First Block</div>
+//     <div> Second block</div>
+//   )
+// }
+
+// JSX Rules 
+// Must always return a single element 
+// <div> </div > and another block cannot be returned
+// follow semantics for good readability
+// Each html attr must need camelcase
+// that is onclick => onClick
+// and also className instead of class because there is difference between html and jsx
+// Close every single element must 
+
+reactDom.render(<Fifth/>,document.getElementById('root'));
