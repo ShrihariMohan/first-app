@@ -54,4 +54,27 @@ const Sixth = () => {
 // and also className instead of class because there is difference between html and jsx
 // Close every single element must 
 
-reactDom.render(<Fifth/>,document.getElementById('root'));
+
+const NestedElements = () => {
+  return (
+    <div>
+      <NavBar />
+      <Body />
+      <Body/>
+    </div>
+  )
+}
+
+const NavBar = () => {
+  return (
+  <h1> this will be a Nav bar component</h1>
+  )
+}
+
+const Body = () => {
+  return (
+  <h2> just to explain nested components this can be another component and
+  this can help in re usability</h2>
+  )
+}
+reactDom.render(<NestedElements/>,document.getElementById('root'));
